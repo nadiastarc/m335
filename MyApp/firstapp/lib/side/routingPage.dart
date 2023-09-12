@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import './navBar/flutter_expandable_fab.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
 final scaffoldKey = GlobalKey<ScaffoldMessengerState>();
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyBar extends StatelessWidget {
+  const MyBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,40 +16,6 @@ class MyApp extends StatelessWidget {
       ),
       scaffoldMessengerKey: scaffoldKey,
       home: const FirstPage(),
-    );
-  }
-}
-
-class CounterWidget extends StatelessWidget {
-  final _counter = ValueNotifier(0);
-
-  CounterWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text(
-            'You have pushed the button this many times:',
-          ),
-          ValueListenableBuilder(
-            valueListenable: _counter,
-            builder: (context, counter, _) {
-              return Text(
-                '$counter',
-                style: Theme.of(context).textTheme.displayMedium,
-              );
-            },
-          ),
-          ElevatedButton.icon(
-            icon: const Icon(Icons.add),
-            label: const Text('add'),
-            onPressed: () => _counter.value++,
-          ),
-        ],
-      ),
     );
   }
 }
@@ -71,7 +33,6 @@ class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CounterWidget(),
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: ExpandableFab(
         key: _key,
@@ -106,7 +67,7 @@ class _FirstPageState extends State<FirstPage> {
           FloatingActionButton.small(
             // shape: const CircleBorder(),
             heroTag: null,
-            child: const Icon(Icons.search),
+            child: const Icon(Icons.book),
             onPressed: () {
               Navigator.of(context).push(
                   MaterialPageRoute(builder: ((context) => const NextPage())));
@@ -115,7 +76,7 @@ class _FirstPageState extends State<FirstPage> {
           FloatingActionButton.small(
             // shape: const CircleBorder(),
             heroTag: null,
-            child: const Icon(Icons.share),
+            child: const Icon(Icons.question_mark),
             onPressed: () {
               final state = _key.currentState;
               if (state != null) {

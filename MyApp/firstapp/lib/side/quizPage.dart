@@ -2,14 +2,8 @@ import 'package:flutter/material.dart';
 
 import './quiz_component/quiz.dart';
 import './quiz_component/result.dart';
+class MyApp extends StatefulWidget {  
 
-void main() {
-  runApp(MaterialApp(
-    home: MyApp(),
-  ));
-}
-
-class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -124,3 +118,4 @@ class _MyAppState extends State<MyApp> {
     ); //MaterialApp
   }
 }
+
