@@ -10,14 +10,25 @@ PreferredSizeWidget myAppBar(String title){
         );
 }
 
-Widget answerCard(String answer){
+Widget answerCard(String answer, BuildContext context){
   return Container(
-          height: 60,
-          width: 150,
+          height: MediaQuery.of(context).size.height*0.1,
+          width: MediaQuery.of(context).size.width,
           child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10))),
+              elevation: 4,
             child: Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Text(answer),
+              child: Center(
+                child: Text(
+                  answer,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18),
+                  textAlign: TextAlign.center,
+                  ),
+              ),
               ),
           ),
         );

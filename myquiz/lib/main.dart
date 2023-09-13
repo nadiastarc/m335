@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myquiz/quizPage.dart';
+import 'package:myquiz/style/style.dart';
 import 'package:myquiz/widgets/widgets.dart';
 
 void main(){
@@ -28,12 +29,20 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Hoi Hoi!"),
+              Spacer(
+                flex: 2,
+              ),
+              Text("Hoi Hoi!" ,
+              style: headerTextStyle(),),
+              Spacer(),
               ElevatedButton(
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => QuizPage()));
                 },
                 child: Text("Start")),
+                Spacer(
+                  flex: 2,
+                ),
           ],) 
         ));
   
