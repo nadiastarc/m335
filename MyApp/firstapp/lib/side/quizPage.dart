@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import './quiz_component/quiz.dart';
 import './quiz_component/result.dart';
-class MyApp extends StatefulWidget {  
+class MyAppp extends StatefulWidget {  
 
-  const MyApp({Key? key}) : super(key: key);
+  const MyAppp({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -12,7 +12,7 @@ class MyApp extends StatefulWidget {
   }
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyAppp> {
   final _questions = const [
     {
       'questionText': 'Q1. Who created Flutter?',
