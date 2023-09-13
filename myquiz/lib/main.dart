@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myquiz/quizPage.dart';
+import 'package:myquiz/widgets/widgets.dart';
 
 void main(){
   runApp(const StartApp());
@@ -22,13 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          title:  Text(
-            "StudyFy",
-          style: TextStyle(color: Colors.black),
-          ),
-        ),
+        appBar: myAppBar("StudyFy"),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
