@@ -110,6 +110,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "step_progress_indicator",
+      "rootUri": "file:///C:/Users/starcevnadia/AppData/Local/Pub/Cache/hosted/pub.dev/step_progress_indicator-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "stream_channel",
       "rootUri": "file:///C:/Users/starcevnadia/AppData/Local/Pub/Cache/hosted/pub.dev/stream_channel-2.1.1",
       "packageUri": "lib/",
@@ -152,7 +158,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2023-09-13T19:52:26.764492Z",
+  "generated": "2023-09-14T16:38:32.241568Z",
   "generator": "pub",
   "generatorVersion": "3.1.0"
 }
