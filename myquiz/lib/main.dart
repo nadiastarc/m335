@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myquiz/quizPage.dart';
+import 'package:myquiz/pages/quizPage.dart';
 import 'package:myquiz/style/style.dart';
 import 'package:myquiz/widgets/widgets.dart';
 
-void main(){
+void main() {
   runApp(const StartApp());
 }
 
@@ -12,9 +12,8 @@ class StartApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(      
-      theme: ThemeData(primaryColor: Colors.tealAccent),
-      home: MyApp());
+    return MaterialApp(
+        theme: ThemeData(primaryColor: Colors.tealAccent), home: MyApp());
   }
 }
 
@@ -25,26 +24,36 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: myAppBar("StudyFy"),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Spacer(
-                flex: 2,
-              ),
-              Text("Hoi Hoi!" ,
-              style: headerTextStyle(),),
-              Spacer(),
-              ElevatedButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => QuizPage()));
-                },
-                child: Text("Start")),
-                Spacer(
-                  flex: 2,
-                ),
-          ],) 
-        ));
-  
+        body: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage("assets/SubWay.jpg"),
+              fit: BoxFit.fitWidth,
+            )),
+            child: Center(
+                child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Spacer(),
+                        Text(
+                          "Hoi Hoi",
+                          style: headerTextStyle(color: Colors.white),
+                        ),
+                        Spacer(),
+                        ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => QuizPage()));
+                            },
+                            child: Text("Start Quiz")),
+                        Spacer(
+                          flex: 2,
+                        ),
+                      ],
+                    )))));
   }
 }
