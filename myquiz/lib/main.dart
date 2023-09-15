@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: myAppBar("StudyFy"),
         body: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
@@ -38,18 +37,11 @@ class MyApp extends StatelessWidget {
                       children: [
                         Spacer(),
                         Text(
-                          "Hoi Hoi",
-                          style: headerTextStyle(color: Colors.white),
+                          "STUDYfY",
+                          style: AppNameTextStyle(),
                         ),
                         Spacer(),
-                        ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => QuizPage()));
-                            },
-                            child: Text("Start Quiz")),
+                        bigButton(context, () => QuizPage(), "Quiz Starten"),
                         Spacer(
                           flex: 2,
                         ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myquiz/main.dart';
+import 'package:myquiz/style/style.dart';
 
 PreferredSizeWidget myAppBar(String title) {
   return AppBar(
@@ -34,5 +36,25 @@ Widget answerCard(String answer, BuildContext context, {bool? check}) {
         ),
       ),
     ),
+  );
+}
+
+Widget bigButton(
+    BuildContext context, Widget Function() createPage, String name) {
+  return Container(
+    child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          minimumSize: Size(MediaQuery.of(context).size.width,
+              MediaQuery.of(context).size.height * 0.1),
+          backgroundColor: Colors.white60,
+        ),
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => createPage()));
+        },
+        child: Text(
+          name,
+          style: headerTextStyle(),
+        )),
   );
 }

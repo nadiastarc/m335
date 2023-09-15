@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myquiz/main.dart';
 import 'package:myquiz/style/style.dart';
+import 'package:myquiz/widgets/widgets.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class endQuiz extends StatelessWidget {
   final int userPoints;
@@ -26,22 +28,22 @@ class endQuiz extends StatelessWidget {
                           style: headerTextStyle(color: Colors.white),
                         ),
                         Spacer(),
+                        CircularStepProgressIndicator(
+                          totalSteps: 6,
+                          currentStep: userPoints,
+                          width: 100,
+                          roundedCap: (_, isSelected) => isSelected,
+                        ),
+                        Spacer(),
                         Text(
                           "You have " +
                               userPoints.toString() +
-                              "von 6 Fragen richtig beantwortet.",
+                              " von 6 Fragen richtig beantwortet.",
                           textAlign: TextAlign.center,
                           style: headerTextStyle(color: Colors.white),
                         ),
                         Spacer(),
-                        ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => MyApp()));
-                            },
-                            child: Text("Startpage")),
+                        bigButton(context, () => MyApp(), "go back"),
                         Spacer(),
                       ],
                     )))));
